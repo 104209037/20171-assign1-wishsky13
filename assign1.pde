@@ -11,15 +11,13 @@ int soldierX, attackSpeed ,attackStar,attackEnd, attackLen;
        
        
 void setup() {
-	size(640, 480, P2D);
+  size(640, 480, P2D);
   soil = loadImage("img/soil.png");
   heart = loadImage("img/life.png");
   groundHog = loadImage("img/groundhog.png");
   backGround = loadImage("img/bg.jpg");
   robot = loadImage("img/robot.png");
   soldier = loadImage("img/soldier.png");
-  
- 
 }
 
 void draw() {
@@ -67,5 +65,4 @@ void draw() {
   stroke(255,0,0);
   strokeWeight(10);
   line(attackStar-attackSpeed,437,attackEnd-attackSpeed+attackLen,437);
-  
 }
