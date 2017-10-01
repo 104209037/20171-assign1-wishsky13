@@ -33,7 +33,7 @@ void draw() {
   
 //background
   //sky
-	image(backGround,0,0);
+  image(backGround,0,0);
 
   //soil 
   image(soil,0,160);
