@@ -7,17 +7,23 @@ PImage soil,
        robot,
        soldier;
        
-int soldierX, attackSpeed ,attackStar,attackEnd, attackLen;
+int soldierX, soldierY, robotX, robotY, attackSpeed ,attackStar,attackEnd, attackLen;
        
        
 void setup() {
-  size(640, 480, P2D);
+	size(640, 480, P2D);
   soil = loadImage("img/soil.png");
   heart = loadImage("img/life.png");
   groundHog = loadImage("img/groundhog.png");
   backGround = loadImage("img/bg.jpg");
   robot = loadImage("img/robot.png");
   soldier = loadImage("img/soldier.png");
+  
+  soldierY=80+80+floor(random(1,3))*80;
+  
+  robotX=80+80+80*floor(random(5));
+  robotY=80+80+floor(random(1,3))*80;
+  
 }
 
 void draw() {
@@ -25,13 +31,14 @@ void draw() {
   soldierX %=640;
   attackSpeed += 2;
   attackSpeed %=185;
-  attackStar=450;
-  attackEnd=450;
+  attackStar=robotX+25;
+  attackEnd=robotX+25;
   attackLen = min(40,attackSpeed);
+ 
   
 //background
   //sky
-  image(backGround,0,0);
+	image(backGround,0,0);
 
   //soil 
   image(soil,0,160);
@@ -56,13 +63,15 @@ void draw() {
   image(groundHog,640/2-40,80);
   
   //soldier
-  image(soldier,soldierX,160);
+  image(soldier,soldierX,soldierY);
   
   //robot
-  image(robot,425,400);
+  image(robot,robotX,robotY);
   
   //attack
   stroke(255,0,0);
   strokeWeight(10);
-  line(attackStar-attackSpeed,437,attackEnd-attackSpeed+attackLen,437);
+  line(attackStar-attackSpeed,robotY+37,attackEnd-attackSpeed+attackLen,robotY+37);
+
+  
 }
