@@ -11,7 +11,7 @@ int soldierX, soldierY, robotX, robotY, attackSpeed ,attackStar,attackEnd, attac
        
        
 void setup() {
-	size(640, 480, P2D);
+  size(640, 480, P2D);
   soil = loadImage("img/soil.png");
   heart = loadImage("img/life.png");
   groundHog = loadImage("img/groundhog.png");
@@ -38,7 +38,7 @@ void draw() {
   
 //background
   //sky
-	image(backGround,0,0);
+  image(backGround,0,0);
 
   //soil 
   image(soil,0,160);
